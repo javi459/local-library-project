@@ -1,5 +1,5 @@
 function findAuthorById(authors, id) {
-  return authors.find(author => author.id === id);
+  return _getElementByID(authors, id);
 }
 
 function findBookById(books, id) {
@@ -27,6 +27,11 @@ function getBorrowersForBook(book, accounts) {
     result.push(object);
   })
   return result.slice(0, 10);
+}
+
+//helper function that finds an element in an array given an id 
+function _getElementByID(elements, id) {
+  return elements.find(element => element.id === id);
 }
 
 module.exports = {
